@@ -10,6 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     clean: true, // Cleans the dist folder before each build
+    publicPath: '/',
   },
 
   // Resolve TypeScript and JavaScript files
@@ -20,20 +21,39 @@ module.exports = {
   // Module rules for processing files
   module: {
     rules: [
+        {
+            test: /\.(png|jpe?g|gif|svg|webp)$/i, // Match image file types
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'assets/images/[name].[hash].[ext]', // Output folder and naming pattern
+                    },
+                },
+            ],
+        },
       {
-        test: /\.tsx?$/, // Match .ts and .tsx files
-        use: 'ts-loader', // Use ts-loader for TypeScript files
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.css$/, // Match .css files
+        test: /\.css$/i, // Match .css files
         use: [
           'style-loader', // Injects styles into the DOM
           'css-loader',   // Resolves CSS imports and URLs
         ],
       },
+      {
+        test: /\.tsx?$/, // Handle TypeScript files
+        use: 'ts-loader',
+        exclude: /node_modules/,
+    },
     ],
   },
+
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'], // Resolve these file extensions
+},
+devServer: {
+    static: './dist',
+    hot: true, // Enable hot module replacement
+},
 
   // Plugins for additional features
   plugins: [
