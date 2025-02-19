@@ -1,0 +1,41 @@
+.hero-container {
+    height: 70vh;
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(50%);
+    padding: 20px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 20px;
+    overflow: visible;
+    color: white;
+    text-shadow: 2px, 2px, 4px, rgba(0, 0, 0, 0.7);
+}
+
+
+
+.hero-container h2 {
+    font-size: 2rem;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.hero-container a {
+    color: antiquewhite;
+}
+
+.slick-prev, .slick-next {
+    z-index: 10; /* Ensure arrows appear above content */
+    width: 60px; /* Set arrow size */
+    height: 60px;
+    transform: translateY(100%); /* Keep them vertically centered */
+}
+
+.slick-prev {
+    left: -55px; /* Move the left arrow outside the container */
+}
+
+.slick-next {
+    right: -55px; /* Move the right arrow outside the container */
+}
