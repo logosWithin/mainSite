@@ -1,7 +1,8 @@
 import React from 'react';
 import './Homepage.css'
-import Hero from '../Hero/Hero';
-import WeLikeThis from '../WeLikeThis/WeLikeThis';
+import Hero from '../../../components/Hero/Hero';
+import WeLikeThis from '../../../components/WeLikeThis/WeLikeThis';
+
 
 const Homepage: React.FC = () => {
   return <div className='homepage-container'>

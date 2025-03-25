@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import Homepage from "./components/Homepage/Homepage";
+
 import Hero from "./components/Hero/Hero";
+import Homepage from "./Pages/Homepage/Homepage/Homepage";
 
 
 export default function App() {
